@@ -19,10 +19,10 @@ public class ItemPage {
 
     @Step("Подписаться на продавца")
     public ItemPage subscribeFavoriteSeller() {
-        if (roleButtonFavoriteSellerSubscription == null) {
-            buttonFavoriteSellersTooltipReference.click();
-        } else {
+        if (roleButtonFavoriteSellerSubscription.exists()) {
             roleButtonFavoriteSellerSubscription.click();
+        } else {
+            buttonFavoriteSellersTooltipReference.click();
         }
         return this;
     }
