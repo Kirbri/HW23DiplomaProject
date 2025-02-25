@@ -33,5 +33,6 @@ public class WebDriverProvider {
         Configuration.baseUrl = "https://www.avito.ru";
         Configuration.timeout = 30000;
         Configuration.pageLoadTimeout = 10000;
+        Configuration.pageLoadStrategy = normal;
     }
 }
