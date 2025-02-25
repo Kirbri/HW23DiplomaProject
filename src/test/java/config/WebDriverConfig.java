@@ -22,7 +22,7 @@ public interface WebDriverConfig extends Config {
     String getBrowserWindowSize();
 
     @Key("browser.isRemote")
-    @DefaultValue("false")
+    // @DefaultValue("false")
     boolean isRemote();
 
     @Key("remote.user")
