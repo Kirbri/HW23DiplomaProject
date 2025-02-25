@@ -21,6 +21,7 @@ public class MainPage {
             locationSuggest = $("[data-marker='popup-location/suggest-0']"),
             locationSaveButton = $("[data-marker='popup-location/save-button']"),
             currentLocation = $("[data-marker='search-form/change-location']"),
+            expandCategoriesWindow = $("[data-marker='more-popup']"),
             allCategories = $("[data-marker='top-rubricator/all-categories']"),
             moreCategories = $("[data-marker='top-rubricator/more-button']"),
             searchBar = $("[data-marker='search-form/suggest/input']"),
@@ -91,7 +92,9 @@ public class MainPage {
 
     @Step("Нажать на кнопку 'Все категории' на главной странице")
     public MainPage clickAllCategories() {
-        allCategories.click(ClickOptions.withTimeout(Duration.ofSeconds(5)));
+        while (!expandCategoriesWindow.exists()) {
+            allCategories.click(ClickOptions.withTimeout(Duration.ofSeconds(5)));
+        }
         return this;
     }
 
