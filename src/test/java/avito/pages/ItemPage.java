@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ItemPage {
     private final SelenideElement titleInfoText = $("[data-marker='item-view/title-info']"),
-            favoriteSellerSubscriptionButton = $("[data-marker='favorite-seller-subscription-button']");
+            favoriteSellerSubscriptionButton = $("[data-marker='item-view/seller-info'] button");
 
     @Step("Проверить соответствие названий '{value}' объявлений")
     public ItemPage checkTitleAnnouncement(String value) {
