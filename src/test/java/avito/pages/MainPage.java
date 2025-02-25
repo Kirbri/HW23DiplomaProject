@@ -88,7 +88,7 @@ public class MainPage {
 
     @Step("Нажать на кнопку 'Все категории' на главной странице")
     public MainPage clickAllCategories() {
-        allCategories.doubleClick();
+        allCategories.click(ClickOptions.withTimeout(Duration.ofSeconds(5)));
         return this;
     }
 
