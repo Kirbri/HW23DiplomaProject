@@ -8,7 +8,8 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ItemPage {
     private final SelenideElement titleInfoText = $("[data-marker='item-view/title-info']"),
-            favoriteSellerSubscriptionButton = $("[data-marker='item-view/seller-info'] button");
+            roleButtonFavoriteSellerSubscription = $("[data-marker='favorite-seller-subscription-button']"),
+            buttonFavoriteSellersTooltipReference = $("[data-marker='favorite-sellers-tooltip/reference']");
 
     @Step("Проверить соответствие названий '{value}' объявлений")
     public ItemPage checkTitleAnnouncement(String value) {
@@ -18,7 +19,11 @@ public class ItemPage {
 
     @Step("Подписаться на продавца")
     public ItemPage subscribeFavoriteSeller() {
-        favoriteSellerSubscriptionButton.click();
+        if (roleButtonFavoriteSellerSubscription == null) {
+            buttonFavoriteSellersTooltipReference.click();
+        } else {
+            roleButtonFavoriteSellerSubscription.click();
+        }
         return this;
     }
 }
